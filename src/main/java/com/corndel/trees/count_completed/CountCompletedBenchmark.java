@@ -2,11 +2,9 @@ package com.corndel.trees.count_completed;
 
 import com.corndel.benchmark.BenchmarkConfig;
 import com.corndel.trees.dto.Task;
+import com.corndel.trees.dto.TaskMapper;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 @State(Scope.Benchmark)
 public class CountCompletedBenchmark extends BenchmarkConfig {
@@ -32,14 +30,11 @@ public class CountCompletedBenchmark extends BenchmarkConfig {
     @Param
     public CountCompleteType countCompleter;
 
-    // CAN NOT RUN ON PRIMITIVES
-    @Param
     public Task task;
 
-    @Setup(Level.Invocation)
-    public void setupInvocation() {
-        // TODO: READ DATA
-        task = new Task("id", "title", false, 5, new ArrayList<>());
+    @Setup(Level.Trial)
+    public void setupTrial() {
+        task = TaskMapper.jsonToTask("data.json");
     }
 
     @Benchmark

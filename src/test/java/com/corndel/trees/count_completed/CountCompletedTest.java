@@ -1,6 +1,7 @@
 package com.corndel.trees.count_completed;
 
 import com.corndel.trees.dto.Task;
+import com.corndel.trees.dto.TaskMapper;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,21 +12,17 @@ class CountCompletedTest {
 
     private final CountCompleted countCompleted = new CountCompleted();
 
-    //    TODO : CONVERT DATA.JSON AS TICKET
-
     @Test
     void countCompletedIterative() {
-        Task task = new Task("id", "title", false, 5, new ArrayList<>());
+        Task task = TaskMapper.jsonToTask("data.json");
         int count = countCompleted.countCompletedA(task);
-        // EXPECTED 7
-        assertEquals(0, count);
+        assertEquals(7, count);
     }
 
     @Test
     void countCompletedRecursive() {
-        Task task = new Task("id", "title", false, 5, new ArrayList<>());
+        Task task = TaskMapper.jsonToTask("data.json");
         int count = countCompleted.countCompletedB(task);
-        // EXPECTED 7
-        assertEquals(0, count);
+        assertEquals(7, count);
     }
 }
