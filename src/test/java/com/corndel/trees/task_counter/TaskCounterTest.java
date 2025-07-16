@@ -2,7 +2,6 @@ package com.corndel.trees.task_counter;
 
 import com.corndel.trees.dto.Task;
 import com.corndel.trees.dto.TaskMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,13 +14,13 @@ class TaskCounterTest {
 
     @Test
     public void countIterative() {
-        int count = new TaskCounter().countIterative(tasks);
-        assertEquals(16 , count);
+        int count = taskCounter.countIterative(tasks);
+        assertEquals(16, count);
     }
 
     @Test
     public void countRecursive() {
-        int count = new TaskCounter().countRecursive(tasks);
-        assertEquals(16 , count);
+        int count = taskCounter.countRecursive(tasks);
+        assertEquals(16, count);
     }
 }
