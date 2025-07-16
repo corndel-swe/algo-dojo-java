@@ -10,7 +10,7 @@
   - CLI
     - `mvn clean verify`
     - `java -jar target/benchmarks.jar BenchTester`
-- [] - Port Sort
+- [x] - Port Sort
 - [] - Port Trees
 - [] - Port Two Pointers
 - [] - Images
