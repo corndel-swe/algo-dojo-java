@@ -14,11 +14,11 @@ public class CountCompleted {
         while (!stack.isEmpty()) {
             Task node = stack.pop();
 
-            if (node.done()) {
+            if (node.isDone()) {
                 count++;
             }
 
-            for (Task child : node.children()) {
+            for (Task child : node.getChildren()) {
                 stack.push(child);
             }
         }
@@ -27,8 +27,8 @@ public class CountCompleted {
     }
 
     public int countCompletedB(Task task) {
-        int count = task.done() ? 1 : 0;
-        for (Task child : task.children()) {
+        int count = task.isDone() ? 1 : 0;
+        for (Task child : task.getChildren()) {
             count += countCompletedB(child);
         }
         return count;

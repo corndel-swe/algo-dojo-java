@@ -4,8 +4,6 @@ import com.corndel.trees.dto.Task;
 import com.corndel.trees.dto.TaskMapper;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CountCompletedTest {
