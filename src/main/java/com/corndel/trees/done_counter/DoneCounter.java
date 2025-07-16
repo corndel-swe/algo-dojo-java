@@ -1,12 +1,12 @@
-package com.corndel.trees.count_completed;
+package com.corndel.trees.done_counter;
 
 import com.corndel.trees.dto.Task;
 
 import java.util.Stack;
 
-public class CountCompleted {
+public class DoneCounter {
 
-    public int countCompletedA(Task task) {
+    public int countIterative(Task task) {
         int count = 0;
         Stack<Task> stack = new Stack<>();
         stack.push(task);
@@ -26,10 +26,10 @@ public class CountCompleted {
         return count;
     }
 
-    public int countCompletedB(Task task) {
+    public int countRecursive(Task task) {
         int count = task.isDone() ? 1 : 0;
         for (Task child : task.getChildren()) {
-            count += countCompletedB(child);
+            count += countRecursive(child);
         }
         return count;
     }

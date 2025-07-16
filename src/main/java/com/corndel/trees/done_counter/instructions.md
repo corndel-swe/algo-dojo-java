@@ -1,20 +1,21 @@
-# Count Completed Tasks
+# Count Done Tasks
 
 ## The problem
 
 You are given a tree of tasks. Each task has a `done` property that is either
 `true` or `false`, and a `children` property that is a list of `Task`.
 
-Complete the two methods on the `CountCompleted` class, the methods should return the number of completed
+Complete the two methods on the `DoneCounter` class, the methods should return the number of completed
 tasks in the given tree, including the root and all descendants.
 
 With each method take a different approach:
 
-- `CountCompleted.countCompletedIterative`: uses an iterative approach
-- `CountCompleted.countCompletedB()`: uses recursion
+- `DoneCounter.countIterative`: uses an iterative approach
+- `DoneCounter.countRecursive`: uses recursion
+
 ---
 
-## Iterative approach: `CountCompleted.countCompletedIterative`
+## Iterative approach: `DoneCounter.countIterative`
 
 Use a stack to simulate walking through the tree.
 
@@ -23,16 +24,16 @@ Steps:
 1. Create a counter (start at 0).
 2. Create a stack with the root node in it.
 3. While the stack is not empty:
-   - Remove the top node from the stack.
-   - If the node's `done` property is true, increment the counter.
-   - Add each of the node's children to the stack.
+    - Remove the top node from the stack.
+    - If the node's `done` property is true, increment the counter.
+    - Add each of the node's children to the stack.
 4. Return the counter.
 
 This version avoids recursion by managing your own stack with a loop.
 
 ---
 
-## Recursive approach: `CountCompleted.countCompletedB`
+## Recursive approach: `DoneCounter.countRecursive`
 
 Let the function call itself for each node’s children.
 

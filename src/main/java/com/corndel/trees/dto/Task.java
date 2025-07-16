@@ -1,6 +1,7 @@
 package com.corndel.trees.dto;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Task {
     private String id;
@@ -59,6 +60,27 @@ public class Task {
 
     public void setChildren(List<Task> children) {
         this.children = children;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Task otherTask = (Task) o;
+
+        if (!Objects.equals(id, otherTask.getId())) return false;
+        if (!Objects.equals(title, otherTask.getTitle())) return false;
+        if (done != otherTask.isDone()) return false;
+        if (effort != otherTask.getEffort()) return false;
+
+        return Objects.equals(children, otherTask.getChildren());
+    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, done, effort, children);
     }
 
     @Override
