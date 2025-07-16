@@ -60,7 +60,7 @@ public class SortingBenchmark extends BenchmarkConfig {
 
     @Setup(Level.Invocation)
     public void setupInvocation() {
-        this.arrayToSort = Arrays.copyOf(originalArrayData, originalArrayData.length);
+        arrayToSort = Arrays.copyOf(originalArrayData, originalArrayData.length);
     }
 
     @Benchmark

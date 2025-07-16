@@ -12,7 +12,10 @@
     - `java -jar target/benchmarks.jar BenchTester`
 - [x] - Port Sort
 - [] - Port Trees
+  - CONVERT DATA TO Ticket RECORD FOR TESTS - OBJECT MAPPER?
 - [] - Port Two Pointers
+- [] - Remove solutions
 - [] - Images
 - [] - Maven wrapper
-- [] - Readme 
+- [] - Readme
+- [] - Format
