@@ -9,8 +9,8 @@ Your task is to complete the two methods on the `MaxWaterContainer` class, choos
 such that together with the x-axis, they form a container that holds the most
 water.
 
-// TODO: ADD IMAGE
-![](../../images/most-water-1.svg)
+
+<img src="../../../../../resources/images/most-water-1.svg"/>
 
 Note that, if forming our container, we ignore all barriers between the left
 wall and the right wall.
@@ -33,8 +33,8 @@ each step:
 1. Compute the area between `heights[left]` and `heights[right]`
 2. Update the max area if it's bigger
 3. Move the pointer pointing to the **shorter** line inward:
-   - If `heights[left] < heights[right]`, increment `left`
-   - Otherwise, decrement `right`
+    - If `heights[left] < heights[right]`, increment `left`
+    - Otherwise, decrement `right`
 
 Repeat until `left >= right`.
 
