@@ -8,19 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DoneCounterTest {
 
-    private final DoneCounter doneCounter = new DoneCounter();
+    private final Task tasks = TaskMapper.jsonToTask("task.json");
 
     @Test
     void countIterative() {
-        Task task = TaskMapper.jsonToTask("task.json");
-        int count = doneCounter.countIterative(task);
+        int count = DoneCounter.countIterative(tasks);
         assertEquals(7, count);
     }
 
     @Test
     void countRecursive() {
-        Task task = TaskMapper.jsonToTask("task.json");
-        int count = doneCounter.countRecursive(task);
+        int count = DoneCounter.countRecursive(tasks);
         assertEquals(7, count);
     }
 }

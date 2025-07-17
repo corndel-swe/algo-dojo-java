@@ -18,14 +18,14 @@ public class DoneCounterBenchmark extends BenchmarkConfig {
 
     @Benchmark
     public void countIterative(Blackhole bh) {
-        new DoneCounter().countIterative(task);
-        bh.consume(task);
+        int count = DoneCounter.countIterative(task);
+        bh.consume(count);
     }
 
     @Benchmark
     public void countRecursive(Blackhole bh) {
-        new DoneCounter().countRecursive(task);
-        bh.consume(task);
+        int count = DoneCounter.countRecursive(task);
+        bh.consume(count);
     }
 
 }

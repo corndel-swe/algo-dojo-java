@@ -11,21 +11,21 @@ public class MaxEffortFinderBenchmark extends BenchmarkConfig {
 
     private Task task;
 
-    @Setup(Level.Invocation)
+    @Setup(Level.Trial)
     public void setupTrial() {
         task = TaskMapper.jsonToTask("task.json");
     }
 
     @Benchmark
     public void iterative(Blackhole bh) {
-        new MaxEffortFinder().findIterative(task);
-        bh.consume(task);
+        int max = MaxEffortFinder.findIterative(task);
+        bh.consume(max);
     }
 
     @Benchmark
     public void recursive(Blackhole bh) {
-        new MaxEffortFinder().findRecursive(task);
-        bh.consume(task);
+        int max = MaxEffortFinder.findRecursive(task);
+        bh.consume(max);
     }
 
 }

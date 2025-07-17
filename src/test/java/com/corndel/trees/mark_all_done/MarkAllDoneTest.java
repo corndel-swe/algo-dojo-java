@@ -11,7 +11,6 @@ class MarkAllDoneTest {
 
     private Task tasks;
     private final Task expected = TaskMapper.jsonToTask("completed-task.json");
-    private final MarkAllDone markAllDone = new MarkAllDone();
 
     @BeforeEach
     public void setUp() {
@@ -20,13 +19,13 @@ class MarkAllDoneTest {
 
     @Test
     void iterative() {
-        markAllDone.iterative(tasks);
+        MarkAllDone.iterative(tasks);
         assertEquals(expected, tasks);
     }
 
     @Test
     void recursive() {
-        markAllDone.recursive(tasks);
+        MarkAllDone.recursive(tasks);
         assertEquals(expected, tasks);
     }
 }

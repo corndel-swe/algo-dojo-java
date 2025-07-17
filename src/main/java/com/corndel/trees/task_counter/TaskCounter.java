@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class TaskCounter {
 
-    public int countIterative(Task task) {
+    public static int countIterative(Task task) {
         int count = 0;
         Stack<Task> stack = new Stack<>();
         stack.push(task);
@@ -23,7 +23,7 @@ public class TaskCounter {
     }
 
 
-    public int countRecursive(Task task) {
+    public static int countRecursive(Task task) {
         int count = 1;
         for (Task child : task.getChildren()) {
             count += countRecursive(child);

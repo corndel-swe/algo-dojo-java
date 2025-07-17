@@ -18,13 +18,13 @@ public class TaskCounterBenchmark extends BenchmarkConfig {
 
     @Benchmark
     public void countIterative(Blackhole bh) {
-        new TaskCounter().countIterative(task);
-        bh.consume(task);
+        int count = TaskCounter.countIterative(task);
+        bh.consume(count);
     }
 
     @Benchmark
     public void countRecursive(Blackhole bh) {
-        new TaskCounter().countRecursive(task);
-        bh.consume(task);
+        int count = TaskCounter.countRecursive(task);
+        bh.consume(count);
     }
 }

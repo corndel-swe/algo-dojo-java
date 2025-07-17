@@ -9,23 +9,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MaxEffortFinderTest {
 
-    private final MaxEffortFinder maxEffortFinder = new MaxEffortFinder();
-    private Task task;
+    private Task tasks = TaskMapper.jsonToTask("task.json");
 
     @BeforeEach
     void setUp() {
-        task = TaskMapper.jsonToTask("task.json");
+        tasks = TaskMapper.jsonToTask("task.json");
     }
 
     @Test
     void findIterative() {
-        int max = maxEffortFinder.findIterative(task);
+        int max = MaxEffortFinder.findIterative(tasks);
         assertEquals(20, max);
     }
 
     @Test
     void findRecursive() {
-        int max = maxEffortFinder.findRecursive(task);
+        int max = MaxEffortFinder.findRecursive(tasks);
         assertEquals(20, max);
     }
 }

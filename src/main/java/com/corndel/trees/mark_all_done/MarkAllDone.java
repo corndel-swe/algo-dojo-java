@@ -5,7 +5,7 @@ import com.corndel.trees.dto.Task;
 import java.util.Stack;
 
 public class MarkAllDone {
-    public void iterative(Task task) {
+    public static void iterative(Task task) {
         Stack<Task> stack = new Stack<>();
         stack.push(task);
 
@@ -19,7 +19,7 @@ public class MarkAllDone {
 
     }
 
-    public void recursive(Task task) {
+    public static void recursive(Task task) {
         task.setDone(true);
         for (Task child : task.getChildren()) {
             recursive(child);

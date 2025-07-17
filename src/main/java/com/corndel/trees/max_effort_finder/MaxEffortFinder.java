@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class MaxEffortFinder {
 
-    public int findIterative(Task task) {
+    public static int findIterative(Task task) {
         int maxEffort = task.getEffort();
         Stack<Task> stack = new Stack<>();
         stack.push(task);
@@ -24,7 +24,7 @@ public class MaxEffortFinder {
         return maxEffort;
     }
 
-    public int findRecursive(Task task) {
+    public static int findRecursive(Task task) {
         int maxEffort = task.getEffort();
         for (Task child : task.getChildren()) {
             int childMax = findRecursive(child);
