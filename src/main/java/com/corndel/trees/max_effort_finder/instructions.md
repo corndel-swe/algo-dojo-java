@@ -12,7 +12,7 @@ You should write two versions:
 
 ---
 
-## 🔁 Iterative approach: `MaxEffortFinder.findIterative`
+## Iterative approach: `MaxEffortFinder.findIterative`
 
 Use a stack and keep track of the largest effort seen so far.
 

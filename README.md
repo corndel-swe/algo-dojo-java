@@ -14,8 +14,8 @@
 - [] - Port Trees
   - [x] - CONVERT DATA TO Ticket RECORD FOR TESTS - OBJECT MAPPER?
 - [] - Port Two Pointers
-- [] - Remove solutions
 - [] - Images
 - [] - Maven wrapper
 - [] - Readme
 - [] - Format
+- [] - Remove solutions
