@@ -11,7 +11,7 @@
     - `mvn clean verify`
     - `java -jar target/benchmarks.jar BenchTester`
 - [x] - Port Sort
-- [] - Port Trees
+- [x] - Port Trees
   - [x] - CONVERT DATA TO Ticket RECORD FOR TESTS - OBJECT MAPPER?
 - [] - Port Two Pointers
 - [] - Images
