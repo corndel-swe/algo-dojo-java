@@ -3,7 +3,9 @@
 ## The Problem
 
 You're given an array of non-negative integers, where each element represents
-the height of a vertical line at that index. Your task is to complete the two methods on the `MaxWaterContainer` class, choose two lines
+the height of a vertical line at that index.
+
+Your task is to complete the two methods on the `MaxWaterContainer` class, choose two lines
 such that together with the x-axis, they form a container that holds the most
 water.
 

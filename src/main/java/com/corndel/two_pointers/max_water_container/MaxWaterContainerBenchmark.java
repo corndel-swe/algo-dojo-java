@@ -9,17 +9,17 @@ import java.util.Random;
 @State(Scope.Benchmark)
 public class MaxWaterContainerBenchmark extends BenchmarkConfig {
 
-    @Param({"100", "10000"})
-    public int N;
+    @Param({"1000", "10000"})
+    public int arraySize;
 
     private int[] heights;
 
     @Setup(Level.Trial)
     public void setup() {
-        heights = new int[N];
+        heights = new int[arraySize];
         Random random = new Random();
 
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < arraySize; i++) {
             heights[i] = random.nextInt(100) + 1; // Heights between 1 and 100
         }
     }

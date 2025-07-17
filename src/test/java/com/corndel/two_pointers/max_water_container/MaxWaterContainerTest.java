@@ -1,7 +1,6 @@
 package com.corndel.two_pointers.max_water_container;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 
@@ -24,7 +23,6 @@ class MaxWaterContainerTest {
     );
 
     @TestFactory
-    @DisplayName("mostWaterNestedLoop (Brute Force) Test Cases")
     Stream<DynamicTest> testMostWaterNestedLoop() {
         return TEST_CASES.stream()
                 .map(testCase ->
@@ -38,7 +36,6 @@ class MaxWaterContainerTest {
     }
 
     @TestFactory
-    @DisplayName("mostWaterTwoPointers (Two Pointers) Test Cases")
     Stream<DynamicTest> testMostWaterTwoPointers() {
         return TEST_CASES.stream()
                 .map(testCase ->
