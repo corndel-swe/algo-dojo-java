@@ -4,7 +4,7 @@
 
 You're given an integer array. Your task is to complete the two methods on the `ArrayReverser` class they should return a new array with the elements in reverse order.
 
-## Naive Solution: `ArrayReverser.reverseNestedLoop`
+## Brute Force Solution: `ArrayReverser.reverseNestedLoop`
 
 Use a loop that starts from the end of the array and `push()` each element to a
 new array.

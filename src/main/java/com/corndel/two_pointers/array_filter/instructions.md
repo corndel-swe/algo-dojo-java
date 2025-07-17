@@ -7,7 +7,7 @@ where **each element appears only once**, and all duplicates are removed.
 
 The result should preserve the sorted order.
 
-## Naive Solution: `ArrayFilter.getDistinctNumbersNestedLoop`
+## Brute Force Solution: `ArrayFilter.getDistinctNumbersNestedLoop`
 
 Iterate through the array and compare each element to the next one. If it’s
 different from the next, add it to a result array.

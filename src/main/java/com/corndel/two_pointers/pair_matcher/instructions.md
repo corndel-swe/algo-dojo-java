@@ -7,7 +7,7 @@ You're given an array of sorted integers and a target number.
 Your task is to complete the two methods on the `Pair` class by determining
 whether **any two distinct elements** in the array add up to the target and return `true` if such a pair exists, otherwise return `false`.
 
-## Naive Solution: `PairSum.hasPairSumNestedLoop`
+## Brute Force Solution: `PairSum.hasPairSumNestedLoop`
 
 Use two nested loops to check every pair `(i, j)` where `i < j`. For each pair,
 check if `arr[i] + arr[j] === target`. If a match is found, return `true`.

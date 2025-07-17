@@ -17,7 +17,7 @@ wall and the right wall.
 
 Return the **maximum possible area** you can form by choosing any two lines.
 
-## Naive Solution: `MaxWaterContainer.mostWaterNestedLoop`
+## Brute Force Solution: `MaxWaterContainer.mostWaterNestedLoop`
 
 Check all possible pairs of lines `(i, j)` using two nested loops. For each
 pair, compute the area using the formula above and track the maximum seen.
