@@ -8,62 +8,76 @@ Welcome, warrior!
 
 This repo is all about algorithms and data structures.
 
-## Sorting
+## Getting started
 
-The `sorting` directory doesn't have any work for you to do, however it does
-demonstrate how we can benchmark different solutions to help choose the most
-performant one.
+Clone the repo so you have it locally.
 
-Try running `node sorting/benchmark.js` to see how they perform. The one with
-the highest operations per second is the best.
+The next two steps are optional, you do not need to run the CLI commands if you are using IntelliJ. You do not need to
+use intellij you can use a combination of vscode and the CLI if you prefer.
 
-## Two pointers
+### Using IntelliJ
 
-The `two-pointers` directory has a bunch of problems than can be solved
-"naively" (using nested loops) or using a two-pointer solution.
+1. Get the application's dependencies by executing the maven goals `clean` & `compile` separately.
+    - Toolbar -> Help -> Find Action -> Execute Maven Goal
+2. Install the [JMH Benchmarking Plugin](https://plugins.jetbrains.com/plugin/7529-jmh-java-microbenchmark-harness)
+    - Once installed classes configured for Benchmarking will be runnable. Classes within a package with Benchmark in
+      their name.
+    - To run click the orange play button next to the icon of a clock.
+    - You are able to run the class or the individual method.
+3. The project uses Junit to run the tests navigate to the corresponding test class and click the green play button to
+   run tests.
 
-For each problem, the `instructions.md` gives a description of the nested loop
-code and the two-pointer code. See if you can reproduce each algorithm, then run
-`npm test` and also the `*.benchmark.js` script in each file to see the
-different in performance.
+### Using the CLI
 
-## Trees
+1. Run the following to get the application's dependencies:
 
-When working with trees, we often need to traverse the tree to modify nodes or
-aggregate information.
+    ```bash
+    ./mvnw clean
+    ./mvnw compile
+    ```
+2. To run the benchmarks you will need to build the jar file for the project and then run the jar passing the benchmark
+   class as an argument.
+    - You will want to do this step each time you work on the repo to keep the jar up to date.
 
-Two possible approaches here are the "stack" approach and the "recursion"
-approach. (Technically, the recursion appraoch will use a "call stack"
-internally, so the two are effectively very similar but the code looks slightly
-different.)
+```bash
+    ./mvnw clean verify
+    java -jar target/benchmarks.jar SortingBenchmark
+```
 
-Again, the `instructions.md` gives a detailed description of each solution. See
-if you can implement the solution, use `npm test` to check, and the
-`*.benchmark.js` script to check the performance difference.
+3. The project uses Junit to run the tests run the following in the cli. You can change the `-Dtest=` flag to specify
+   spefic tests to run.
 
-## Beyond
+```bash
+./mvnw test -Dtest=DoneCounterTest
+```
 
-This repos gives a taster of taking different approaches to two different
-classes of problems. After some experience of working with algorithms, you will
-come to realise that the same few problems tend to turn up again and again.
+## BenchMarking?
 
+JMH stands for the Java Microbenchmark Harness. It's a specialized toolkit designed to help you accurately measure the performance (speed) of small pieces of Java code.
 
-## Todo
+##  Charlie Todo
 
-- [x] - Unit Tests working
-  - CLI
-    - `mvn test`
-- [x] - Benchmark working
-  - JMH Intellij Plugin
-  - CLI
-    - `mvn clean verify`
-    - `java -jar target/benchmarks.jar BenchTester`
-- [x] - Port Sort
-- [x] - Port Trees
-  - [x] - CONVERT DATA TO Ticket RECORD FOR TESTS - OBJECT MAPPER?
+- [x] 
+    - Unit Tests working
+    - CLI
+        - `mvn test`
+- [x] 
+    - Benchmark working
+    - JMH Intellij Plugin
+    - CLI
+        - `mvn clean verify`
+        - `java -jar target/benchmarks.jar BenchTester`
+- [x] 
+    - Port Sort
+- [x] 
+    - Port Trees
+    - [x] 
+        - CONVERT DATA TO Ticket RECORD FOR TESTS - OBJECT MAPPER?
 - x - Port Two Pointers
-- [x] - Images
-- [] - Maven wrapper
+- [x] 
+    - Images
+- [x] 
+    - Maven wrapper
 - [] - Readme & Instructions
 - [] - Format
 - [] - Remove solutions
