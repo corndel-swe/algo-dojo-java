@@ -39,7 +39,7 @@ public class SortingBenchmark extends BenchmarkConfig {
         public abstract void sort(int[] arr);
     }
 
-    @Param({"10000", "100000"})
+    @Param({"1000", "10000"})
     public int arraySize;
 
     @Param

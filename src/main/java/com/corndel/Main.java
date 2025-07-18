@@ -10,8 +10,10 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        String path = String.join(File.separator, args);
+
         Options opt = new OptionsBuilder()
-                .include(String.join(File.separator, args))
+                .include(path)
                 .build();
         try {
             new Runner(opt).run();
