@@ -2,7 +2,7 @@ package com.corndel.two_pointers.max_water_container;
 
 public class MaxWaterContainer {
 
-    public static int mostWaterNestedLoop(int[] heights) {
+    public static int mostWaterBruteForce(int[] heights) {
 
         int max = 0;
 

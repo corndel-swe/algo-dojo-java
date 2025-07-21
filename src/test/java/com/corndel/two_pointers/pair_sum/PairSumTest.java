@@ -1,4 +1,4 @@
-package com.corndel.two_pointers.pair_matcher;
+package com.corndel.two_pointers.pair_sum;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;
@@ -10,9 +10,6 @@ import java.util.stream.Stream;
 
 class PairSumTest {
 
-    private record TestCase(int[] arr, int target, boolean expected) {
-    }
-
     private static final List<TestCase> TEST_CASES = List.of(
             new TestCase(new int[]{1, 2, 3, 4, 5}, 9, true),
             new TestCase(new int[]{1, 2, 3, 4, 5}, 10, false),
@@ -23,15 +20,15 @@ class PairSumTest {
     );
 
     @TestFactory
-    Stream<DynamicTest> testHasPairSumNestedLoop() {
+    Stream<DynamicTest> testHasPairSumBruteForce() {
         return TEST_CASES.stream()
                 .map(testCase ->
                         DynamicTest.dynamicTest(
-                                String.format("hasPairSumNestedLoop(%s, %d) === %b",
+                                String.format("hasPairSumBruteForce(%s, %d) === %b",
                                         Arrays.toString(testCase.arr()), testCase.target(), testCase.expected()),
                                 () -> {
                                     Assertions.assertEquals(testCase.expected(),
-                                            PairSum.hasPairSumNestedLoop(testCase.arr(), testCase.target()));
+                                            PairSum.hasPairSumBruteForce(testCase.arr(), testCase.target()));
                                 }
                         )
                 );
@@ -50,6 +47,9 @@ class PairSumTest {
                                 }
                         )
                 );
+    }
+
+    private record TestCase(int[] arr, int target, boolean expected) {
     }
 }
 

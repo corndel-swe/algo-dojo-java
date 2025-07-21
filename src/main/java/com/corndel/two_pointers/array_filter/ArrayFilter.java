@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ArrayFilter {
 
-    public static int[] getDistinctNumbersNestedLoop(int[] arr) {
+    public static int[] getDistinctNumbersBruteForce(int[] arr) {
         if (arr == null || arr.length == 0) {
             return new int[0];
         }

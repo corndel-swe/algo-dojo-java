@@ -25,8 +25,8 @@ public class MaxWaterContainerBenchmark extends BenchmarkConfig {
     }
 
     @Benchmark
-    public void mostWaterNestedLoop(Blackhole bh) {
-        int result = MaxWaterContainer.mostWaterNestedLoop(heights);
+    public void mostWaterBruteForce(Blackhole bh) {
+        int result = MaxWaterContainer.mostWaterBruteForce(heights);
         bh.consume(result);
     }
 

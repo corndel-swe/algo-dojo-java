@@ -1,48 +1,59 @@
 # Count Done Tasks
 
-## The problem
+## The Problem
 
-You are given a tree of tasks. Each task has a `done` property that is either
-`true` or `false`, and a `children` property that is a list of `Task`.
+You are given a tree of tasks. Each task has a `done` property that is either `true` or `false`, and a `children`
+property that is a list of `Task` objects.
 
-Complete the two methods on the `DoneCounter` class, the methods should return the number of completed
-tasks in the given tree, including the root and all descendants.
+Complete the two methods on the `DoneCounter` class to return the total number of completed tasks in the given tree,
+including the root and all its descendants.
 
-With each method take a different approach:
+Each method should take a different approach:
 
-- `DoneCounter.countIterative`: uses an iterative approach
-- `DoneCounter.countRecursive`: uses recursion
-
----
-
-## Iterative approach: `DoneCounter.countIterative`
-
-Use a stack to simulate walking through the tree.
-
-Steps:
-
-1. Create a counter (start at 0).
-2. Create a stack with the root node in it.
-3. While the stack is not empty:
-    - Remove the top node from the stack.
-    - If the node's `done` property is true, increment the counter.
-    - Add each of the node's children to the stack.
-4. Return the counter.
-
-This version avoids recursion by managing your own stack with a loop.
+* `DoneCounter.countIterative`: uses an iterative approach
+* `DoneCounter.countRecursive`: uses a recursive approach
 
 ---
 
-## Recursive approach: `DoneCounter.countRecursive`
+## Iterative Approach: `DoneCounter.countIterative`
 
-Let the function call itself for each node’s children.
+This method simulates walking through the tree using an explicit stack.
+It processes one node at a time, checking its `done` status and adding its children to the stack for future processing.
 
-Steps:
+### Basic Steps
 
-1. Create your base case, if the current node is done, count 1. Otherwise, count 0.
-2. For each child in the node’s children, call the function recursively and add
-   the result to your count.
-3. Return the total count.
+* Create a counter variable.
+* Create a stack and add the root `Task` node onto it.
+* While the stack is not empty:
+    * Remove the top node from the stack.
+    * If the node's `done` property is `true`, increment the counter.
+    * For each child `Task` in the current node's `children` list, push that child onto the stack.
+* Return the final count.
 
-This version is shorter and easier to follow, but depends on the call stack
-instead of a manual one.
+### Complexity
+
+* **Time complexity**: O(N) - Where N is the total number of nodes in the tree, as each node is visited once.
+* **Space complexity**: O(H) - Where H is the height of the tree, representing the maximum number of nodes that can be
+  in the stack at any given time (in the worst case, a skewed tree).
+
+---
+
+## Recursive Approach: `DoneCounter.countRecursive`
+
+This method leverages the call stack to traverse the tree. The method calls itself for each child node, aggregating
+the count of completed tasks from all branches.
+
+### Basic Steps
+
+* Start with a `currentCount` for the given node: if the current node's `done` property is `true`, `currentCount` is 1;
+  otherwise, it's 0.
+* For each child `Task` in the current node's `children` list:
+    * Recursively call this method with the child `Task`.
+    * Add the result of this recursive call to your `currentCount`.
+* Return the `currentCount`.
+
+### Complexity
+
+* **Time complexity**: O(N) - Where N is the total number of nodes in the tree, as each node is visited once.
+* **Space complexity**: O(H) - Where H is the height of the tree, representing the maximum depth of the call stack (in
+  the worst case, a skewed tree).

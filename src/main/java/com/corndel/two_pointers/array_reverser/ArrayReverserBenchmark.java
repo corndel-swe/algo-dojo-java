@@ -24,8 +24,8 @@ public class ArrayReverserBenchmark extends BenchmarkConfig {
     }
 
     @Benchmark
-    public void reverseNestedLoop(Blackhole bh) {
-        int[] reversed = ArrayReverser.reverseNestedLoop(array);
+    public void reverseBruteForce(Blackhole bh) {
+        int[] reversed = ArrayReverser.reverseBruteForce(array);
         bh.consume(reversed);
     }
 

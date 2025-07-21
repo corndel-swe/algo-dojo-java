@@ -1,4 +1,4 @@
-package com.corndel.two_pointers.pair_matcher;
+package com.corndel.two_pointers.pair_sum;
 
 import com.corndel.benchmark.BenchmarkConfig;
 import org.openjdk.jmh.annotations.*;
@@ -32,8 +32,8 @@ public class PairSumBenchmark extends BenchmarkConfig {
     }
 
     @Benchmark
-    public void hasPairSumNestedLoop(Blackhole bh) {
-        boolean result = PairSum.hasPairSumNestedLoop(array, unreachableTarget);
+    public void hasPairSumBruteForce(Blackhole bh) {
+        boolean result = PairSum.hasPairSumBruteForce(array, unreachableTarget);
         bh.consume(result);
     }
 

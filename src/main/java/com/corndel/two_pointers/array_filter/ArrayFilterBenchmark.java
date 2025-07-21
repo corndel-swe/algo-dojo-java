@@ -33,8 +33,8 @@ public class ArrayFilterBenchmark extends BenchmarkConfig {
     }
 
     @Benchmark
-    public void getDistinctNumbersNestedLoop(Blackhole bh) {
-        int[] result = ArrayFilter.getDistinctNumbersNestedLoop(temp);
+    public void getDistinctNumbersBruteForce(Blackhole bh) {
+        int[] result = ArrayFilter.getDistinctNumbersBruteForce(temp);
         bh.consume(result);
     }
 

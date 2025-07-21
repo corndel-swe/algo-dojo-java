@@ -12,7 +12,6 @@ public class TaskMapper {
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     public static Task jsonToTask(String fileName) {
-
         String json = readJsonFromResourcesData(fileName);
 
         try {

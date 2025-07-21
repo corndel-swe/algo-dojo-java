@@ -37,9 +37,7 @@ public class MergeSort {
         int[] R = new int[n2];
 
         // Copy data to temp arrays L[] and R[]
-        for (int i = 0; i < n1; ++i) {
-            L[i] = arr[left + i];
-        }
+        System.arraycopy(arr, left, L, 0, n1);
         for (int j = 0; j < n2; ++j) {
             R[j] = arr[middle + 1 + j];
         }

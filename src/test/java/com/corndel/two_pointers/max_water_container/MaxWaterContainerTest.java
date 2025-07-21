@@ -10,8 +10,6 @@ import java.util.stream.Stream;
 
 class MaxWaterContainerTest {
 
-    private record TestCase(int[] arr, int expected) {}
-
     private static final List<TestCase> TEST_CASES = List.of(
             new TestCase(new int[]{}, 0),
             new TestCase(new int[]{1}, 0),
@@ -23,13 +21,13 @@ class MaxWaterContainerTest {
     );
 
     @TestFactory
-    Stream<DynamicTest> testMostWaterNestedLoop() {
+    Stream<DynamicTest> testMostWaterBruteForce() {
         return TEST_CASES.stream()
                 .map(testCase ->
                         DynamicTest.dynamicTest(
-                                String.format("mostWaterNestedLoop(%s) === %d", Arrays.toString(testCase.arr()), testCase.expected()),
+                                String.format("mostWaterBruteForce(%s) === %d", Arrays.toString(testCase.arr()), testCase.expected()),
                                 () -> {
-                                    Assertions.assertEquals(testCase.expected(), MaxWaterContainer.mostWaterNestedLoop(testCase.arr()));
+                                    Assertions.assertEquals(testCase.expected(), MaxWaterContainer.mostWaterBruteForce(testCase.arr()));
                                 }
                         )
                 );
@@ -46,5 +44,8 @@ class MaxWaterContainerTest {
                                 }
                         )
                 );
+    }
+
+    private record TestCase(int[] arr, int expected) {
     }
 }

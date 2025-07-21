@@ -10,9 +10,6 @@ import java.util.stream.Stream;
 
 
 class ArrayReverserTest {
-    private record TestCase(int[] arr, int[] expected) {
-    }
-
     private static final List<TestCase> TEST_CASES = List.of(
             new TestCase(new int[]{}, new int[]{}),
             new TestCase(new int[]{1}, new int[]{1}),
@@ -21,15 +18,15 @@ class ArrayReverserTest {
     );
 
     @TestFactory
-    Stream<DynamicTest> testReverseNestedLoop() {
+    Stream<DynamicTest> testReverseBruteForce() {
         return TEST_CASES.stream()
                 .map(testCase ->
                         DynamicTest.dynamicTest(
-                                String.format("reverseNestedLoop(%s) === %s",
+                                String.format("reverseBruteForce(%s) === %s",
                                         Arrays.toString(testCase.arr()), Arrays.toString(testCase.expected())),
                                 () -> {
                                     Assertions.assertArrayEquals(testCase.expected(),
-                                            ArrayReverser.reverseNestedLoop(testCase.arr()));
+                                            ArrayReverser.reverseBruteForce(testCase.arr()));
                                 }
                         )
                 );
@@ -48,5 +45,8 @@ class ArrayReverserTest {
                                 }
                         )
                 );
+    }
+
+    private record TestCase(int[] arr, int[] expected) {
     }
 }

@@ -25,8 +25,8 @@ public class ZeroShifterBenchmark extends BenchmarkConfig {
     }
 
     @Benchmark
-    public void shiftZerosNestedLoop(Blackhole bh) {
-        int[] result = ZeroShifter.shiftZerosNestedLoop(array);
+    public void shiftZerosBruteForce(Blackhole bh) {
+        int[] result = ZeroShifter.shiftZerosBruteForce(array);
         bh.consume(result);
     }
 

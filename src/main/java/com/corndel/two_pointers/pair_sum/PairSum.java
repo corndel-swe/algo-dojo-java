@@ -1,7 +1,7 @@
-package com.corndel.two_pointers.pair_matcher;
+package com.corndel.two_pointers.pair_sum;
 
 public class PairSum {
-    public static boolean hasPairSumNestedLoop(int[] arr, int target) {
+    public static boolean hasPairSumBruteForce(int[] arr, int target) {
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {

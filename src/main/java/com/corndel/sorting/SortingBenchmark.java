@@ -10,6 +10,33 @@ import java.util.Random;
 @State(Scope.Benchmark)
 public class SortingBenchmark extends BenchmarkConfig {
 
+    @Param({"1000", "10000"})
+    public int arraySize;
+    @Param
+    public SortType sorter;
+    private int[] originalArrayData;
+    private int[] arrayToSort;
+
+    @Setup(Level.Trial)
+    public void setupTrial() {
+        originalArrayData = new int[arraySize];
+        Random random = new Random(arraySize);
+        for (int i = 0; i < arraySize; i++) {
+            originalArrayData[i] = random.nextInt();
+        }
+    }
+
+    @Setup(Level.Invocation)
+    public void setupInvocation() {
+        arrayToSort = Arrays.copyOf(originalArrayData, originalArrayData.length);
+    }
+
+    @Benchmark
+    public void benchmarkSort(Blackhole bh) {
+        sorter.sort(arrayToSort);
+        bh.consume(arrayToSort);
+    }
+
     public enum SortType {
         BUBBLE_SORT {
             @Override
@@ -37,35 +64,5 @@ public class SortingBenchmark extends BenchmarkConfig {
         };
 
         public abstract void sort(int[] arr);
-    }
-
-    @Param({"1000", "10000"})
-    public int arraySize;
-
-    @Param
-    public SortType sorter;
-
-    private int[] originalArrayData;
-
-    private int[] arrayToSort;
-
-    @Setup(Level.Trial)
-    public void setupTrial() {
-        originalArrayData = new int[arraySize];
-        Random random = new Random(arraySize);
-        for (int i = 0; i < arraySize; i++) {
-            originalArrayData[i] = random.nextInt();
-        }
-    }
-
-    @Setup(Level.Invocation)
-    public void setupInvocation() {
-        arrayToSort = Arrays.copyOf(originalArrayData, originalArrayData.length);
-    }
-
-    @Benchmark
-    public void benchmarkSort(Blackhole bh) {
-        sorter.sort(arrayToSort);
-        bh.consume(arrayToSort);
     }
 }

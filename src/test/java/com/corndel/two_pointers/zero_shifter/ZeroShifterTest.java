@@ -10,9 +10,6 @@ import java.util.stream.Stream;
 
 class ZeroShifterTest {
 
-    private record TestCase(int[] arr, int[] expected) {
-    }
-
     private static final List<TestCase> TEST_CASES = List.of(
             new TestCase(new int[]{}, new int[]{}),
             new TestCase(new int[]{0}, new int[]{0}),
@@ -24,15 +21,15 @@ class ZeroShifterTest {
     );
 
     @TestFactory
-    Stream<DynamicTest> testShiftZerosNestedLoop() {
+    Stream<DynamicTest> testShiftZerosBruteForce() {
         return TEST_CASES.stream()
                 .map(testCase ->
                         DynamicTest.dynamicTest(
-                                String.format("shiftZerosNestedLoop(%s) === %s",
+                                String.format("shiftZerosBruteForce(%s) === %s",
                                         Arrays.toString(testCase.arr()), Arrays.toString(testCase.expected())),
                                 () -> {
                                     Assertions.assertArrayEquals(testCase.expected(),
-                                            ZeroShifter.shiftZerosNestedLoop(testCase.arr()));
+                                            ZeroShifter.shiftZerosBruteForce(testCase.arr()));
                                 }
                         )
                 );
@@ -51,5 +48,8 @@ class ZeroShifterTest {
                                 }
                         )
                 );
+    }
+
+    private record TestCase(int[] arr, int[] expected) {
     }
 }

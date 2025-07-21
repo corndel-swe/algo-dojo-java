@@ -11,9 +11,6 @@ import java.util.stream.Stream;
 
 class ArrayFilterTest {
 
-    private record TestCase(int[] arr, int[] expected) {
-    }
-
     private static final List<TestCase> TEST_CASES = List.of(
             new TestCase(new int[]{}, new int[]{}),
             new TestCase(new int[]{1}, new int[]{1}),
@@ -23,15 +20,15 @@ class ArrayFilterTest {
     );
 
     @TestFactory
-    Stream<DynamicTest> testGetDistinctNumbersNestedLoop() {
+    Stream<DynamicTest> testGetDistinctNumbersBruteForce() {
         return TEST_CASES.stream()
                 .map(testCase ->
                         DynamicTest.dynamicTest(
-                                String.format("getDistinctNumbersNestedLoop(%s) === %s",
+                                String.format("getDistinctNumbersBruteForce(%s) === %s",
                                         Arrays.toString(testCase.arr()), Arrays.toString(testCase.expected())),
                                 () -> {
                                     Assertions.assertArrayEquals(testCase.expected(),
-                                            ArrayFilter.getDistinctNumbersNestedLoop(testCase.arr()));
+                                            ArrayFilter.getDistinctNumbersBruteForce(testCase.arr()));
                                 }
                         )
                 );
@@ -52,5 +49,8 @@ class ArrayFilterTest {
                                 }
                         )
                 );
+    }
+
+    private record TestCase(int[] arr, int[] expected) {
     }
 }

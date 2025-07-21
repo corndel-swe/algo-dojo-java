@@ -4,7 +4,7 @@ import com.corndel.trees.dto.Task;
 import com.corndel.trees.dto.TaskMapper;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EffortTotallerTest {
 

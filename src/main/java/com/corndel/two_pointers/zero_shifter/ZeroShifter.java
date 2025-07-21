@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ZeroShifter {
 
-    public static int[] shiftZerosNestedLoop(int[] arr) {
+    public static int[] shiftZerosBruteForce(int[] arr) {
         if (arr == null || arr.length == 0) {
             return new int[0];
         }
@@ -43,16 +43,16 @@ public class ZeroShifter {
 
         int[] a = Arrays.copyOf(arr, arr.length);
 
-        int insertPos = 0;
+        int write = 0;
 
         for (int i = 0; i < a.length; i++) {
             if (a[i] != 0) {
-                a[insertPos++] = a[i];
+                a[write++] = a[i];
             }
         }
 
-        while (insertPos < a.length) {
-            a[insertPos++] = 0;
+        while (write < a.length) {
+            a[write++] = 0;
         }
 
         return a;

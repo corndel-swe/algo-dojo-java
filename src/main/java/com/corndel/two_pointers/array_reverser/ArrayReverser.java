@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArrayReverser {
-    public static int[] reverseNestedLoop(int[] arr) {
+    public static int[] reverseBruteForce(int[] arr) {
         if (arr == null || arr.length == 0) {
             return new int[0];
         }

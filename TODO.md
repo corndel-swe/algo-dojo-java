@@ -1,49 +1,54 @@
-# TODO
+# TODOjo
 
+Welcome to the Dojo, warrior!
 
+## Two Pointers
 
-## Sorting
+The `two_pointers` package presents a collection of problems that can be solved using either a brute force approach (
+involving iteration & nested loops) or a more optimised two-pointer solution.
 
-The `sorting` directory doesn't have any work for you to do, however it does
-demonstrate how we can benchmark different solutions to help choose the most
-performant one.
+For each problem in this package, the provided `instructions.md` provides a description, along with
+pseudocode/steps for both the brute force and two-pointer implementations solutions.
 
-- It is designed to compare different sorting methods, such as Bubble, Insertion, Merge, 
-- The class allows you to configure the size of the arrays being sorted and which specific algorithm to run for each test. 
-- It executes the chosen sorting algorithm on this prepared data and measures its speed.
+Your task is to implement each algorithm. Once implemented, run their corresponding unit tests in `src/test` to verify
+correctness.
 
+Afterwards, execute the benchmark class in each package to observe and compare the performance difference
+between the two approaches.
 
-Try running `src/main/java/com/corndel/sorting/SortingBenchmark.java` to see how they perform. The one with
-the highest operations per second is the best.
-
-
-
-## Two pointers
-
-The `two-pointers` directory has a bunch of problems than can be solved
-"naively" (using nested loops) or using a two-pointer solution.
-
-For each problem, the `instructions.md` gives a description of the nested loop
-code and the two-pointer code. See if you can reproduce each algorithm, then run
-`npm test` and also the `*.benchmark.js` script in each file to see the
-different in performance.
+- [ ] [ArrayFilter](./src/main/java/com/corndel/two_pointers/array_filter/ArrayFilter.java)
+- [ ] [ArrayReverser](./src/main/java/com/corndel/two_pointers/array_reverser/ArrayReverser.java)
+- [ ] [PairSum](./src/main/java/com/corndel/two_pointers/pair_sum/PairSum.java)
+- [ ] [ZeroShifter](./src/main/java/com/corndel/two_pointers/zero_shifter/ZeroShifter.java)
+- [ ] [MaxWaterContainer](./src/main/java/com/corndel/two_pointers/max_water_container/MaxWaterContainer.java)
 
 ## Trees
 
-When working with trees, we often need to traverse the tree to modify nodes or
-aggregate information.
+When working with trees, we often need to traverse them to modify nodes or aggregate information. In the `trees`
+package, you will practice your traversal techniques.
 
-Two possible approaches here are the "stack" approach and the "recursion"
-approach. (Technically, the recursion appraoch will use a "call stack"
-internally, so the two are effectively very similar but the code looks slightly
-different.)
+The [task.json](./src/main/resources/data/task.json) file represents a nested tree structure in JSON format, similar to a
+response from an external API. 
 
-Again, the `instructions.md` gives a detailed description of each solution. See
-if you can implement the solution, use `npm test` to check, and the
-`*.benchmark.js` script to check the performance difference.
+The [Task](./src/main/java/com/corndel/trees/dto/Task.java) Data Transfer Object defines
+the class structure that each method in this package will receive for traversal.
+
+Two common approaches for tree traversal are the "stack" approach (iterative) and the "recursion" approach. (
+Technically, the recursive approach uses the call stack internally, making the two conceptually similar, though their
+code implementations differ.)
+
+Again, the `instructions.md` provides a description of each solution. Your goal is to implement these
+solutions, use the tests in `src/test` to verify your implementations, and use the Benchmark classes to compare
+their performance.
+
+- [ ] [TaskCounter](./src/main/java/com/corndel/trees/task_counter/TaskCounter.java)
+- [ ] [DoneCounter](./src/main/java/com/corndel/trees/done_counter/DoneCounter.java)
+- [ ] [MaxEffortFinder](./src/main/java/com/corndel/trees/max_effort_finder/MaxEffortFinder.java)
+- [ ] [EffortTotaller](./src/main/java/com/corndel/trees/effort_totaller/EffortTotaller.java)
+- [ ] [MarkAllDone](./src/main/java/com/corndel/trees/mark_all_done/MarkAllDone.java)
 
 ## Beyond
 
-This repos gives a taster of taking different approaches to two different
-classes of problems. After some experience of working with algorithms, you will
-come to realise that the same few problems tend to turn up again and again.
+This repository offers a taste of applying different algorithmic approaches to two distinct classes of problems. As you
+gain more experience working with algorithms, you will come to realise that the same foundational problems tend to
+reappear in various forms.
