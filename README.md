@@ -56,6 +56,8 @@ This project utilises the **Maven Wrapper** (`./mvnw` on Unix/macOS/Linux, `mvnw
    This command cleans any previous build artifacts, compiles the code, runs unit tests, and installs the project's
    artifacts into your local Maven repository. This also ensures all external dependencies are downloaded and available.
 
+   The unit tests will fail at first and that is okay, you will be responsible for getting them to pass.
+
 2. **Running Benchmarks:**
    This project uses the JMH Maven Plugin for benchmark execution.
    To run the benchmarks you will need to build the jar file for the project and then run the jar passing the
@@ -63,7 +65,7 @@ This project utilises the **Maven Wrapper** (`./mvnw` on Unix/macOS/Linux, `mvnw
     - You will want to do this step each time you work on the repo to keep the jar up to date.
 
    ```bash
-     ./mvnw clean verify
+     ./mvnw package
    
      java -jar target/benchmarks.jar SortingBenchmark
    ```
