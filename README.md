@@ -65,7 +65,7 @@ This project utilises the **Maven Wrapper** (`./mvnw` on Unix/macOS/Linux, `mvnw
     - You will want to do this step each time you work on the repo to keep the jar up to date.
 
    ```bash
-     ./mvnw package
+     ./mvnw package -DskipTests=true
    
      java -jar target/benchmarks.jar SortingBenchmark
    ```
