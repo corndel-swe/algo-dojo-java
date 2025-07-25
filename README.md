@@ -50,7 +50,7 @@ This project utilises the **Maven Wrapper** (`./mvnw` on Unix/macOS/Linux, `mvnw
    Run the following command from the project root to perform a clean build and download all necessary dependencies:
 
    ```bash
-   ./mvnw clean install
+   ./mvnw clean install -DskipTests=true
    ```
 
    This command cleans any previous build artifacts, compiles the code, runs unit tests, and installs the project's
